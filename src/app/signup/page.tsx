@@ -5,7 +5,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
-export default function signUpPage() {
+export default function SignUpPage() {
   const router = useRouter();
 
   const [user, setUser] = useState({
