@@ -16,22 +16,23 @@ export default function SignUpPage() {
   const [button, setButton] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const onSignup = async () => {
+  async function onSignup() {
     try {
+       
       setLoading(true);
       const response = await axios.post("/api/users/signup", user);
       // const data =response.json();
       console.log(response.data);
-      
+
       router.push("/login");
     } catch (error: any) {
       console.log(error.message);
-      
+
       toast.error(error.message);
     } finally {
       setLoading(false);
     }
-  };
+  }
 
   useEffect(() => {
     if (
